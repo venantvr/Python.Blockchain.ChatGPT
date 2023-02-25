@@ -100,21 +100,9 @@ La méthode is_valid() de la classe Blockchain vérifie l'intégrité de la cha�
 valide et que le hash du bloc précédent correspond au hash stocké dans le bloc actuel. Si l'un de ces contrôles échoue,
 la méthode renvoie False. Sinon, elle renvoie True.
 
-### Comment exécuter ce code ?
+### Montre-moi un programme Python qui utilise ce code.
 
-Pour exécuter ce code, il suffit de le sauvegarder dans un fichier avec l'extension .py (par exemple
-integrity_check.py), puis de lancer l'interpréteur Python depuis la ligne de commande et d'exécuter le fichier :
-
-```bash
-$ python integrity_check.py
-```
-
-Il est également possible de l'exécuter depuis un environnement de développement Python tel que PyCharm ou Jupyter
-Notebook.
-
-### Montre-moi un code Python qui utilise ce code.
-
-Voici un exemple de code Python qui utilise le code que nous avons présenté précédemment pour créer une blockchain :
+Voici un exemple de programme Python qui utilise le code que nous avons présenté précédemment pour créer une blockchain :
 
 ```python
 from blockchain import Block, Blockchain
