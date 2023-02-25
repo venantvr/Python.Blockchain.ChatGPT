@@ -319,6 +319,92 @@ Cet exemple est très basique, mais il peut être étendu pour ajouter d'autres 
 de la supply totale en réponse à certaines actions, la possibilité de brûler des jetons ou d'émettre de nouveaux jetons,
 et bien plus encore.
 
+### Améliore l'algorithme de consensus du code de blockchain que tu as précédemment écrit.
+
+L'algorithme de consensus est un aspect critique de la blockchain, car il garantit la sécurité et l'intégrité du réseau.
+Il existe plusieurs algorithmes de consensus, mais l'un des plus populaires est l'algorithme de preuve de travail (Proof
+of Work ou PoW). Dans cet algorithme, les mineurs doivent résoudre un problème mathématique complexe pour ajouter un
+nouveau bloc à la chaîne.
+
+Cependant, le PoW est très énergivore et peut être sujet à des attaques de 51 %. Il existe d'autres algorithmes de
+consensus, comme la preuve d'enjeu (Proof of Stake ou PoS) et la preuve d'autorité (Proof of Authority ou PoA).
+
+Dans cet exemple, nous allons utiliser l'algorithme PoS pour améliorer l'algorithme de consensus du code de blockchain.
+Dans cet algorithme, les nœuds sont sélectionnés pour ajouter un nouveau bloc en fonction du montant de cryptomonnaie
+qu'ils ont investi dans le réseau.
+
+Voici un exemple de code qui utilise l'algorithme PoS :
+
+```python
+import hashlib
+import random
+
+
+class Block:
+    def __init__(self, index, timestamp, data, previous_hash, nonce, stake):
+        self.index = index
+        self.timestamp = timestamp
+        self.data = data
+        self.previous_hash = previous_hash
+        self.nonce = nonce
+        self.stake = stake
+
+    def calculate_hash(self):
+        hash_data = str(self.index) + str(self.timestamp) + str(self.data) + str(self.previous_hash) + str(
+            self.nonce) + str(self.stake)
+        sha = hashlib.sha256()
+        sha.update(hash_data.encode('utf-8'))
+        return sha.hexdigest()
+
+
+class Blockchain:
+    def __init__(self):
+        self.chain = [self.create_genesis_block()]
+        self.difficulty = 4
+        self.stake_balance = {}
+        self.stake_threshold = 10
+        self.transaction_fee = 0.1
+
+    def create_genesis_block(self):
+        return Block(0, "01/01/2022", "Genesis Block", "0", 0, 0)
+
+    def get_last_block(self):
+        return self.chain[-1]
+
+    def add_block(self, new_block):
+        new_block.previous_hash = self.get_last_block().calculate_hash()
+        new_block.nonce = self.proof_of_stake(new_block)
+        self.chain.append(new_block)
+
+    def proof_of_stake(self, block):
+        total_stake = sum(self.stake_balance.values())
+        if total_stake < self.stake_threshold:
+            return random.randint(0, 100)
+        for node, stake in self.stake_balance.items():
+            if stake / total_stake > random.random():
+                return int(hashlib.sha256(node.encode('utf-8')).hexdigest(), 16) % 100
+
+    def add_transaction_fee(self, block):
+        total_fee = len(block.data) * self.transaction_fee
+        self.stake_balance[block.data[0]['from']] -= total_fee
+
+    def add_stake(self, node, stake):
+        self.stake_balance[node] = stake
+
+    def is_valid(self):
+        for i in range(1, len(self.chain)):
+            current_block = self.chain[i]
+            previous_block = self.chain[i - 1]
+
+            if current_block.calculate_hash() != current_block.calculate_hash():
+                return False
+
+            if previous_block.calculate_hash() != previous_block.calculate_hash():
+                return False
+
+        return True
+```
+
 ### Explique ton implémentation du PoS...
 
 Dans l'algorithme de Preuve d'Enjeu (PoS), le processus de validation de blocs n'est plus basé sur la puissance de
