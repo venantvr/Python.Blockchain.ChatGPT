@@ -319,3 +319,31 @@ Cet exemple est très basique, mais il peut être étendu pour ajouter d'autres 
 de la supply totale en réponse à certaines actions, la possibilité de brûler des jetons ou d'émettre de nouveaux jetons,
 et bien plus encore.
 
+### Explique ton implémentation du PoS
+
+Dans l'algorithme de Preuve d'Enjeu (PoS), le processus de validation de blocs n'est plus basé sur la puissance de
+calcul, mais sur la quantité de tokens possédés par un nœud (aussi appelé "enjeu"). Ainsi, les nœuds ayant le plus grand
+enjeu ont plus de chances de valider les blocs suivants.
+
+Mon implémentation du PoS dans le code de blockchain repose sur les étapes suivantes :
+
+Les nœuds doivent posséder un certain montant de tokens pour être éligibles à la validation de blocs. Ce montant est
+fixé par le réseau et peut varier en fonction des conditions de marché.
+
+À chaque tour de validation de blocs, un nœud est choisi aléatoirement pour valider le bloc suivant, en fonction de son
+enjeu. Plus le nœud possède de tokens, plus il a de chances d'être choisi.
+
+Une fois qu'un nœud est sélectionné, il doit fournir une preuve de possession de tokens en bloquant une partie de ses
+tokens (son enjeu) dans une adresse temporaire. Cette adresse est appelée "coinbase address" et permet de garantir que
+le nœud a effectivement les tokens nécessaires pour participer à la validation de blocs.
+
+Une fois que le bloc est validé, le nœud reçoit une récompense sous forme de tokens supplémentaires qui sont générés par
+le réseau.
+
+Après avoir reçu sa récompense, le nœud peut récupérer son enjeu en débloquant l'adresse temporaire (coinbase address).
+
+Dans mon implémentation, j'ai également ajouté une fonctionnalité pour encourager les nœuds à ne pas abandonner le
+réseau. Ainsi, si un nœud abandonne le réseau avant la fin d'une période prédéfinie, il perd une partie de son enjeu.
+Cette perte est proportionnelle à la durée pendant laquelle le nœud a été inactif. En revanche, si un nœud reste actif
+pendant toute la période, il reçoit une récompense supplémentaire.
+
