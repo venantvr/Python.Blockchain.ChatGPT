@@ -319,7 +319,7 @@ Cet exemple est très basique, mais il peut être étendu pour ajouter d'autres 
 de la supply totale en réponse à certaines actions, la possibilité de brûler des jetons ou d'émettre de nouveaux jetons,
 et bien plus encore.
 
-### Explique ton implémentation du PoS
+### Explique ton implémentation du PoS...
 
 Dans l'algorithme de Preuve d'Enjeu (PoS), le processus de validation de blocs n'est plus basé sur la puissance de
 calcul, mais sur la quantité de tokens possédés par un nœud (aussi appelé "enjeu"). Ainsi, les nœuds ayant le plus grand
