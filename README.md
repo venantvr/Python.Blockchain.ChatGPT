@@ -291,3 +291,31 @@ tokens, ainsi que la création d'un système de contrôle des balances de tokens
 Ces fonctionnalités sont assez avancées et nécessitent une compréhension approfondie de la programmation blockchain et
 de la sécurité informatique. Il est recommandé de suivre des cours ou des tutoriels pour apprendre à implémenter ces
 fonctionnalités.
+
+### Donne-moi en Python un exemple de smart-contract...
+
+Bien sûr, voici un exemple de smart contract simple en Python :
+
+```python
+class SimpleToken:
+    def __init__(self, owner, supply):
+        self.balance = {owner: supply}
+        self.total_supply = supply
+
+    def transfer(self, sender, recipient, amount):
+        if sender not in self.balance or self.balance[sender] < amount:
+            return False
+        self.balance[sender] -= amount
+        self.balance[recipient] = self.balance.get(recipient, 0) + amount
+        return True
+```
+
+Dans cet exemple, nous avons un smart contract de jeton simple qui permet à un propriétaire initial de créer une offre
+initiale de jetons. Le contrat contient une méthode transfer qui permet à un utilisateur de transférer des jetons à un
+autre utilisateur. Le contrat vérifie que l'utilisateur qui envoie les jetons a suffisamment de jetons pour effectuer la
+transaction, puis met à jour les soldes des utilisateurs.
+
+Cet exemple est très basique, mais il peut être étendu pour ajouter d'autres fonctionnalités telles que la mise à jour
+de la supply totale en réponse à certaines actions, la possibilité de brûler des jetons ou d'émettre de nouveaux jetons,
+et bien plus encore.
+
