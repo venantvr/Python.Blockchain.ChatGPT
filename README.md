@@ -292,7 +292,7 @@ Ces fonctionnalités sont assez avancées et nécessitent une compréhension app
 de la sécurité informatique. Il est recommandé de suivre des cours ou des tutoriels pour apprendre à implémenter ces
 fonctionnalités.
 
-### Donne-moi en Python un exemple de smart-contract...
+### Donne-moi en Python un exemple de contrat intelligent...
 
 Bien sûr, voici un exemple de smart contract simple en Python :
 
