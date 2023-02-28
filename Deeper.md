@@ -28,7 +28,7 @@ Cependant, cette approche peut également présenter des défis, notamment en te
 traitement des transactions sur la blockchain, ainsi que de la complexité liée à la mise en place d'un smart contract
 robuste et à la gestion des autorisations et des identités.
 
-### Montre-moi un exemple de code solidity Sui ferait ça.
+### Montre-moi un exemple de code Solidity qui ferait ça.
 
 Voici un exemple de contrat Solidity qui permet d'envoyer des messages via un service de messagerie basé sur une
 blockchain :
@@ -84,7 +84,7 @@ Ce contrat peut être déployé sur une blockchain Ethereum et utilisé comme un
 utilisateurs peuvent envoyer et recevoir des messages sans avoir à faire confiance à un tiers de confiance centralisé,
 car toutes les interactions sont enregistrées et vérifiables sur la blockchain.
 
-### Montre-moi le code python associé.
+### Montre-moi le code Python associé.
 
 Voici un exemple de code Python qui pourrait interagir avec un smart contract Solidity implémentant un service-bus :
 
@@ -167,7 +167,7 @@ Solidity représentant un service-bus. Il permet d'envoyer des messages à ce se
 sendMessage, et de lire les messages en appelant une fonction getMessage. Notez que le code est simplifié et qu'il
 faudrait gérer les erreurs et les exceptions de manière appropriée dans un cas réel.
 
-### Comment héberger un réseau ethereum en local ?
+### Comment héberger un réseau Ethereum en local ?
 
 Pour héberger un réseau Ethereum en local, vous pouvez suivre les étapes suivantes :
 
@@ -227,7 +227,7 @@ qui fournit une implémentation complète de la machine virtuelle Ethereum ainsi
 déployer des contrats intelligents en Python. Il existe également d'autres bibliothèques Python telles que Web3.py et
 EthPy, qui fournissent des interfaces de haut niveau pour interagir avec un nœud Ethereum.
 
-### Comment sont résolues les adresses des nœuds ethereum ?
+### Comment sont résolues les adresses des nœuds Ethereum ?
 
 Les adresses des nœuds Ethereum sont résolues via un système de découverte de nœuds appelé "discovery protocol". Ce
 protocole permet aux nœuds de se découvrir mutuellement et de se connecter les uns aux autres en utilisant une adresse
@@ -362,7 +362,7 @@ Dans cet exemple, la clé privée et l'adresse sont définies en tant que chaîn
 eth_account permet de créer un objet Account à partir de la clé privée, qui contient l'adresse correspondante. On peut
 alors comparer cette adresse à l'adresse attendue pour vérifier si la clé privée est correcte.
 
-### Décris-moi ta réponse d'avant ça en pseudo langage.
+### Décris-moi ta réponse d'avant ça en pseudo code.
 
 Voici un exemple de vérification de clé privée en pseudo code :
 
@@ -495,7 +495,7 @@ puis est utilisée pour signer la transaction entière, y compris les données d
 signature est donc incluse dans les données de la transaction et vérifiée par les mineurs lors de l'inclusion de la
 transaction dans un bloc.
 
-### Montre-moi un exemple qui montre cette signature dans le paylod
+### Montre-moi un exemple qui montre cette signature dans le payload.
 
 Voici un exemple de payload de transaction Ethereum qui contient la signature :
 
@@ -539,7 +539,7 @@ clé privée correspondante à l'adresse de l'émetteur.
 Oui, les valeurs de r et s changent à chaque signature car elles sont déterminées en partie par la clé privée utilisée
 pour signer la transaction. Chaque clé privée génère une signature unique pour une transaction donnée.
 
-### Comment est-on certain dans ethereum qu'une transaction n'est pas minée 2 fois par des miners différents ?
+### Comment est-on certain dans Ethereum qu'une transaction n'est pas minée 2 fois par des miners différents ?
 
 Dans Ethereum, chaque nœud maintient une liste de transactions en attente de validation dans le pool de transactions.
 Lorsqu'un mineur commence à miner un bloc, il choisit les transactions à inclure dans ce bloc à partir de ce pool.
@@ -577,7 +577,7 @@ et ne seront pas pris en compte.
 Ainsi, la gestion de la concurrence dans Ethereum est basée sur le consensus du réseau et la sélection du premier bloc
 validé pour être ajouté à la chaîne principale. Cela garantit l'intégrité et la sécurité de la blockchain.
 
-### Écris-moi en pseudo langage le processus d'intégration d'une transaction sur ethereum en étant précis...
+### Écris-moi en pseudo code le processus d'intégration d'une transaction sur ethereum en étant précis...
 
 Voici le processus d'intégration d'une transaction sur Ethereum :
 
